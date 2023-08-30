@@ -1,6 +1,11 @@
 # moonlight_window
 月照纱窗生成器 / Moonlight Window (puzzle) image generater
 
+# 需求 / requirements
+```
+pip install Pillow
+pip install numpy
+```
 
 # TODO
 - 介绍：什么是月照纱窗？

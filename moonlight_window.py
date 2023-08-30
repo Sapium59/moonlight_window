@@ -14,7 +14,8 @@ split_color = (127, 127, 127)   # gray
 os.makedirs("output", exist_ok=True)
 
 
-while True:
+# while True:
+def main():
     chars = input("月照纱窗:\n")
     # chars = "月照纱窗"
 
@@ -23,7 +24,8 @@ while True:
         
 
     char_num = len(chars)
-    image = Image.new('RGB', (char_num * pix_per_char, pix_per_char), ans_color)
+    width, height = char_num * pix_per_char, pix_per_char
+    image = Image.new('RGB', (width, height), ans_color)
     draw = ImageDraw.Draw(image)
 
 
@@ -47,6 +49,15 @@ while True:
     for idx in range(1, char_num):
         xy = (idx * pix_per_char, 0, idx * pix_per_char, pix_per_char)
         draw.line(xy, fill=split_color)
+    
+    # get answer image step 5: draw four sides of the image
+    for xy in [
+        (0,             0,                  0,              height - 1),
+        (width - 1,     0,                  width - 1,      height - 1),
+        (0,             0,                  width - 1,      0         ),
+        (0,             height - 1,         width - 1,      height - 1),
+    ]:
+        draw.line(xy, fill=split_color)
     image.save(f"output/{chars}_A.png")
 
 
@@ -62,7 +73,19 @@ while True:
     for idx in range(1, char_num):
         xy = (idx * pix_per_char, 0, idx * pix_per_char, pix_per_char)
         draw.line(xy, fill=split_color)
+    
+    # get question image step 3: draw four sides of the image
+    for xy in [
+        (0,             0,                  0,              height - 1),
+        (width - 1,     0,                  width - 1,      height - 1),
+        (0,             0,                  width - 1,      0         ),
+        (0,             height - 1,         width - 1,      height - 1),
+    ]:
+        draw.line(xy, fill=split_color)
     image.save(f"output/{chars}_Q.png")
 
 
     print(f"Success! Please refer to output/{chars}_Q.png and output/{chars}_A.png")
+
+
+main()

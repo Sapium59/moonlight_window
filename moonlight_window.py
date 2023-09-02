@@ -5,7 +5,13 @@ import os
 
 # config
 pix_per_char = 300
-font = ImageFont.truetype("simhei.ttf" , pix_per_char)  # Font type
+
+font_support_dict = {
+    "simhei": "simhei.ttf",
+    "Deng": "Deng.ttf",
+    "simsun": "simsun.ttc",
+    "simkai": "simkai.ttf",
+}
 bg_color = (255, 255, 255)      # white
 ans_color = (0, 0, 0)           # black
 char_color = (0, 0, 255)        # blue
@@ -15,13 +21,15 @@ os.makedirs("output", exist_ok=True)
 
 
 # while True:
-def main():
-    chars = input("月照纱窗:\n")
-    # chars = "月照纱窗"
-
+def moonlight_window(chars: str, font: str):
     if len(chars) >= 10:
-        print(f"Fail! {chars} is too long!")
+        return f"Fail! {chars} is too long!"
         
+    # default font: simhei
+    font = ImageFont.truetype(font_support_dict.get(
+            font, 
+            font_support_dict["simhei"]
+        ), pix_per_char)  # Font type
 
     char_num = len(chars)
     width, height = char_num * pix_per_char, pix_per_char
@@ -84,8 +92,7 @@ def main():
         draw.line(xy, fill=split_color)
     image.save(f"output/{chars}_Q.png")
 
+    return "Success!"
+    # return f"Success! Please refer to output/{chars}_Q.png and output/{chars}_A.png"
 
-    print(f"Success! Please refer to output/{chars}_Q.png and output/{chars}_A.png")
 
-
-main()

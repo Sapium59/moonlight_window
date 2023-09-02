@@ -11,17 +11,20 @@ pip install Pillow
 pip install numpy
 ```
 
+# 网页部署简例 / Verfy simple example
+我也不太懂，建议自学基础flask、html等 / I dont know, dont ask me, just learn flask and html and be a master
+
+```
+cd moonlight-window
+python wsgi.py
+```
+
 
 # TODO
 - 介绍：什么是月照纱窗？
-- - 欢迎补充介绍或链接
+- - 欢迎补充介绍或链接，比如[鱼左老师的推文](http://mp.weixin.qq.com/s?__biz=MzkxOTQ5MTA3NQ==&mid=2247485167&idx=1&sn=13661cc9be08d2cdbbf69e25c57a4e55&chksm=c1a00183f6d7889553b4225264443afd430620086556ea8b4f0ae90646594b621b2d002d8c9c&mpshare=1&scene=23&srcid=0902BGdutoB5f14nZad5yu0Q&sharer_shareinfo=b471290eed78e6dc64beda5e1fb4fb35&sharer_shareinfo_first=b471290eed78e6dc64beda5e1fb4fb35#rd)
 - Introduction: What is Moonlight Window?
 - - Relevant puzzle introductions and links are warmly welcomed.
-
-- 部署：我如何使用？
-- - 近期（预计2023.9.2前）即将放出试用网页。撰写部署教程可能超出本人能力范围，欢迎合作者。
-- Deployment: How can I make use of these code?
-- - Recently (no later than Sep. 2nd, I expect) there will be a webpage release, such that everyone would have access to this tool, regardless of any local machine limit. However, writing a deployment tutorial is very likely to be too hard for me. Any helping hand?
 
 - 测试：它做的对吗？
 - - 开发难免会有疏漏。欢迎捉虫！我的联系方式：sapium59@gmail.com

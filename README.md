@@ -4,6 +4,7 @@
 # 体验 / Try it here!
 - 月照纱窗生成器 / Moonlight window generator:      http://101.35.245.7:5000/
 - 月照纱窗字典   / Most common moonlight windows:   https://www.sapium.site/open-window/
+- 相关：[并黑交白生成器 / Char-union generator](https://github.com/zhu-yuefeng/char-union):       http://101.35.245.7:5001/
 
 # 本地运行需求 / Requirements for local run 
 ```

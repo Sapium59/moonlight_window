@@ -31,9 +31,9 @@ def index():
 @app.route('/submit', methods=['POST'])
 def submit():
     input_string = request.form['input']
-    font = request.form['font']
+    font_name = request.form['font']
     # do something with the input string to produce the output
-    res = moonlight_window(input_string, font)
+    res = moonlight_window(input_string, save_dir="output", font_name=font_name)
     if res == "Success!":
         return render_template(
             'result_success.html', 
@@ -44,3 +44,8 @@ def submit():
             'result_fail.html', 
             result=res,
             )
+
+
+if __name__ == '__main__':
+    port = sys.argv[-1] if len(sys.argv) > 1 else 5000
+    app.run(host='0.0.0.0', port=port)
